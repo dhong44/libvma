@@ -226,8 +226,6 @@ public:
 
 	void handle_timer_expired(void* user_data);
 
-	virtual bool delay_orig_close_to_dtor();
-
 	list_node<sockinfo_tcp, sockinfo_tcp::accepted_conns_node_offset> accepted_conns_node;
 
 protected:
@@ -280,8 +278,6 @@ private:
 	bool m_timer_pending;
 
 	bool report_connected; //used for reporting 'connected' on second non-blocking call to connect.
-
-	int m_call_orig_close_on_dtor;
 
 	int m_error_status;
 

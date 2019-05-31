@@ -871,11 +871,6 @@ int close(int __fd)
 
 	srdr_logdbg_entry("fd=%d", __fd);
 
-	/*
-	socket_fd_api* sock = fd_collection_get_sockfd(__fd);
-	if (sock) sock->delay_orig_close_to_dtor();
-	*/
-
 	handle_close(__fd);
 
 	return orig_os_api.close(__fd);

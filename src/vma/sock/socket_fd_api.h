@@ -198,14 +198,6 @@ public:
 	virtual void remove_epoll_context(epfd_info *epfd);
 	int get_epoll_context_fd();
 
-#if _BullseyeCoverage
-    #pragma BullseyeCoverage off
-#endif
-	virtual bool delay_orig_close_to_dtor() {return false;}
-#if _BullseyeCoverage
-    #pragma BullseyeCoverage on
-#endif
-
 	// Calling OS transmit
 	ssize_t tx_os(const tx_call_t call_type, const iovec* p_iov,
 		      const ssize_t sz_iov, const int __flags,
